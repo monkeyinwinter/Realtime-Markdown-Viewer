@@ -1,1 +1,1 @@
-![](path/to/img.jpg)
+<img src="path/to/img.jpg">
