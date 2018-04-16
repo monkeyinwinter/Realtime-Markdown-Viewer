@@ -60,11 +60,8 @@ var parseNewLine = function(str) {
   while ((stra = newLineRegExp.exec(str)) !== null) {
     tmp = stra[0].replace('\n', '<br/>')
     str = str.replace(stra[0], tmp);
-  }
-  return str;
- }
 
- var parseCode = function(str) {
+var parseCode = function(str) {
   var codeRegExp = /`{1}(\w+)`{1}/;
   var stra = [];
   while ((stra = codeRegExp.exec(str)) !== null) {
@@ -72,6 +69,7 @@ var parseNewLine = function(str) {
   }
   return str;
  }
+
 
  var parseBlockQuote = function(str) {
   var quoteRegExp = /\:\"(.*?)\"\:/
@@ -104,6 +102,7 @@ var markdown = {
     str = parseCode(str);
     str = parseBlockQuote(str);
     str = parseDel(str);
+
     return str;
   }
 };
